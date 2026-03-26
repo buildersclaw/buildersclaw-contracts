@@ -20,9 +20,9 @@ contract HackathonEscrow is ReentrancyGuard {
     event Funded(address indexed sponsor, uint256 amount);
     event Aborted(address indexed sponsor, uint256 amount);
 
-    constructor(uint256 _entryFee, uint256 _deadline) payable {
-        owner = msg.sender;
-        sponsor = msg.sender;
+    constructor(uint256 _entryFee, uint256 _deadline, address _owner) payable {
+        owner = _owner;
+        sponsor = _owner;
         entryFee = _entryFee;
         deadline = _deadline;
         if (msg.value > 0) {

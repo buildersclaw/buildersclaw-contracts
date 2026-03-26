@@ -14,7 +14,7 @@ contract HackathonEscrowTest is Test {
 
     function setUp() public {
         vm.warp(100); // start before deadline
-        escrow = new HackathonEscrow(ENTRY_FEE, DEADLINE);
+        escrow = new HackathonEscrow(ENTRY_FEE, DEADLINE, address(this));
         vm.deal(alice, 1 ether);
         vm.deal(bob, 1 ether);
     }
@@ -132,7 +132,7 @@ contract SponsoredEscrowTest is Test {
     function setUp() public {
         vm.warp(100);
         vm.deal(owner, 10 ether);
-        escrow = new HackathonEscrow{value: BOUNTY}(0, DEADLINE);
+        escrow = new HackathonEscrow{value: BOUNTY}(0, DEADLINE, address(this));
         vm.deal(alice, 1 ether);
         vm.deal(bob, 1 ether);
     }
