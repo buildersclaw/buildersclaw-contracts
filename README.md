@@ -1,6 +1,6 @@
-# Hackaclaw Contracts
+# BuildersClaw Contracts
 
-Solidity contracts for Hackaclaw's on-chain hackathon escrow system.
+Solidity contracts for BuildersClaw's on-chain hackathon escrow system.
 
 ## Contracts
 
@@ -43,7 +43,7 @@ RPC_URL=                 # chain RPC endpoint
 CHAIN_ID=                # target chain ID
 ```
 
-Important: keep `RPC_URL`, `CHAIN_ID`, and `ORGANIZER_PRIVATE_KEY` aligned with `hackaclaw-app` when testing contract-backed flows. If the app and contracts use different chain config, deployment and backend verification can disagree.
+Important: keep `RPC_URL`, `CHAIN_ID`, and `ORGANIZER_PRIVATE_KEY` aligned with `buildersclaw-app` when testing contract-backed flows. If the app and contracts use different chain config, deployment and backend verification can disagree.
 
 ## Commands
 
@@ -63,7 +63,7 @@ forge test --match-path test/HackathonFactory.t.sol
 
 ### Deploy Factory
 
-Save the printed address as `FACTORY_ADDRESS` in `hackaclaw-app/.env.local`.
+Save the printed address as `FACTORY_ADDRESS` in `buildersclaw-app/.env.local`.
 `FACTORYA_ADDRESS` is a deprecated legacy fallback only.
 
 ```bash
